@@ -2,7 +2,7 @@
 import "@/app/styles.css"
 import { Dispatch, MouseEventHandler, SetStateAction, useEffect, useState } from "react";
 import Image from "next/image";
-import init, {generate_grid} from "../../pkg/minesweeper.js"
+import init, { generate_grid } from "../../pkg/minesweeper.js"
 
 type Option<T> = T | null
 
@@ -73,7 +73,7 @@ function Tile(props: TileProps) {
 
 function TileImage(state: TileState) {
     if (state == "Flagged") {
-        return <img src="/Flag.svg" alt={"Flag"} height="34px" width="34px"></img>
+        return <img src="./Flag.svg" alt={"Flag"} height="34px" width="34px"></img>
     } else if (state == "Hidden") {
 
     } else {
@@ -128,7 +128,7 @@ function Stage(props: StageProps) {
         }
         return remaining
     }
-    function calcHidden(i:number) {
+    function calcHidden(i: number) {
         return boards[i]?.flat().filter(e => e == "Hidden").length;
     }
     function NextButton() {
@@ -150,9 +150,9 @@ function Stage(props: StageProps) {
             }
         }
         return <button onClick={onClick}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-      </svg>
-      </button>
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+        </button>
     }
     function PrevButton() {
         function onClick() {
@@ -161,9 +161,9 @@ function Stage(props: StageProps) {
             }
         }
         return <button onClick={onClick}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-      </svg>
-      </button>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+        </button>
 
     }
     function onClick(i: number) {
